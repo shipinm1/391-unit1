@@ -1,0 +1,8 @@
+create table airports(Airport_ID, Name, City, Country, IATA, ICAO, Latitude, Longitude, Altitude, Timezone, DST, Tz_database_time_zone, Type, Source);
+create table routes(Airline, Airline_ID, Source_Airport, Source_airport_ID, Destination_airport, Destination_airport_ID, Codeshare, Stops, Equipment);
+create table airlines(Airline_ID, Name, Alias, IATA, ICAO, Callsign, Country, Active);
+.separator ","
+.import airports.dat airports
+.import routes.dat routes
+.import airlines.dat airlines
+delete from routes where Stops <> '0';
